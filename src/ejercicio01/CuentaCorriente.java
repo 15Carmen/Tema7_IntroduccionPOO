@@ -65,10 +65,12 @@ public class CuentaCorriente {
      * Método que muestra la información de la cuenta corriente
      * @return
      */
-    public String mostrarInformacion(){
-        return "CuentaCorriente: " +
-                "nombre='" + nombre + '\'' +
-                ", DNI='" + DNI + '\'' +
-                ", saldo=" + saldo;
+    @Override
+    public String toString() {
+        String result="";
+        result += "DNI: " + DNI + "\n";
+        result += "Nombre: " + nombre + "\n";
+        result += "Saldo: " + saldo;
+        return result;
     }
 }
