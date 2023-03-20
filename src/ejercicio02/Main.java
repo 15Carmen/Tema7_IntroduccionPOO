@@ -6,17 +6,15 @@ public class Main {
 
         //Pido prestado dos libros
         System.out.println("Voy a pedir prestado dos libros");
-        Libro.prestamo();
-        Libro.prestamo();
-        System.out.println("Numero de ejemplares disponibles: "+ Libro.numEjemplares);
-        System.out.println("Numero de ejemplares prestados: "+Libro.numPrestados);
+        libro.prestamo();
+        libro.prestamo();
+        System.out.println("Numero de ejemplares prestados: "+libro.numPrestados);
 
         //Devuelvo un libro
         System.out.println();
         System.out.println("Voy a devolver un libro");
-        Libro.devolucion();
-        System.out.println("Numero de ejemplares disponibles: "+ Libro.numEjemplares);
-        System.out.println("Numero de ejemplares prestados: "+Libro.numPrestados);
+        libro.devolucion();
+        System.out.println("Numero de ejemplares prestados: "+libro.numPrestados);
 
 
 

@@ -12,11 +12,11 @@ public class Libro {
     /**
      * Atributo que guarda el número de ejemplares del libro
      */
-    static int numEjemplares;
+    int numEjemplares;
     /**
      * Atributo que guarda el número de ejemplares prestados del libro
      */
-    static int numPrestados;
+    int numPrestados;
 
     /**
      * Constructor de la clase Libro sin parámetros
@@ -42,18 +42,15 @@ public class Libro {
      * Método que devuelve si un libro se ha prestado o no
      * @return true si se ha prestado, false si no se ha prestado
      */
-    public static boolean prestamo() {
+    public boolean prestamo() {
         //Declaro las variables
         boolean prestado = false;
 
-        //Si hay ejemplares disponibles, incremento el número de ejemplares prestados y decremento el número de ejemplares disponibles
-        if (numEjemplares > 0) {
-            numEjemplares--;
+        //Si el numero de ejemplares prestados es menor que el número de ejemplares total
+        if (numPrestados < numEjemplares) {
             numPrestados++;
             //Indico que el libro se ha prestado
             prestado = true;
-        } else {    //Si no hay ejemplares disponibles, muestro un mensaje por pantalla
-            System.out.println("No hay ejemplares disponibles");
         }
         //Devuelvo el valor de la variable prestado
         return prestado;
@@ -63,18 +60,15 @@ public class Libro {
      * Método que devuelve si un libro se ha devuelto o no
      * @return true si se ha devuelto, false si no se ha devuelto
      */
-    public static boolean devolucion() {
+    public boolean devolucion() {
         //Declaro las variables
         boolean devuelto = false;
 
         //Si hay ejemplares prestados, incremento el número de ejemplares disponibles y decremento el número de ejemplares prestados
         if (numPrestados > 0) {
-            numEjemplares++;
             numPrestados--;
             //Indico que el libro se ha devuelto
             devuelto = true;
-        } else {    //Si no hay ejemplares prestados, muestro un mensaje por pantalla
-            System.out.println("No hay ejemplares prestados");
         }
         //Devuelvo el valor de la variable devuelto
         return devuelto;
